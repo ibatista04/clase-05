@@ -22,3 +22,20 @@ export(x=data_xls , file="output/data_excel.xlsx")
 export(x=data_xls , file="output/data_r.rds")
 #Convert
 convert(in_file = "input/datos_censo.csv" , out_file="output/data_r.rds")
+
+#Explorar bases de datos
+data(package="dplyr")
+library(dplyr)
+#Obtener datos
+db = as_tibble(x = starwars)
+##Primeras cinco obs de la base que se estudiará
+head(x = db , n = 5) ## pinta sobre la consola las primeras 5 observaciones de "db"
+tail(x = db)
+str(object = mtcars)
+#Bases muy grandes (forma de describir)
+skim(data = db)
+##Manipulación de variables
+db = rename(.data = db , weigth=mass , height_cm=height) ## de la librería dplyr
+colnames(db)
+df=select_all(.tbl = db , toupper)
+
