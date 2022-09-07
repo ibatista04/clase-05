@@ -37,5 +37,13 @@ skim(data = db)
 ##Manipulación de variables
 db = rename(.data = db , weigth=mass , height_cm=height) ## de la librería dplyr
 colnames(db)
+
+colnames (db) [9]="género"
+
+#TODO EN MAYÚSCULA
 df=select_all(.tbl = db , toupper)
 
+#Arreglar columnas
+colnames(data_csv)
+data_csv2=clean_names(data_csv)
+colnames(data_csv2)
