@@ -15,3 +15,10 @@ p_load(rio, # función import/export: permite leer/escribir archivos desde difer
 data_csv = import(file="input/datos_censo.csv" , skip=6 , encoding="UTF-8")
 
 data_xls = import(file="input/datos_excel.xlsx" , skip=9)
+
+
+export(x=data_xls , file="output/data_excel.xlsx")
+
+export(x=data_xls , file="output/data_r.rds")
+#Convert
+convert(in_file = "input/datos_censo.csv" , out_file="output/data_r.rds")
